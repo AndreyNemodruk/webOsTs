@@ -1,0 +1,12 @@
+.film-card {
+  min-width: 162px;
+  height: 228px;
+  border: solid 4px transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 20px;
+
+  &_active {
+    border: solid 4px #33a49f;
+  }
+}

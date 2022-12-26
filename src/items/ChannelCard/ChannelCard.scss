@@ -1,0 +1,56 @@
+.channel-card {
+  min-width: 220px;
+  height: 220px;
+  margin: 0 56px 0 0;
+  background-color: #313d5f;
+  position: relative;
+  display: inline-block;
+  border: 4px solid transparent;
+  vertical-align: top;
+
+  &_image {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &_lock {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    background: url('../../assets/images/ic_lock.png') no-repeat;
+  }
+
+  &_name {
+    font-size: 0;
+  }
+
+  &_active &_name {
+    position: absolute;
+    width: 100%;
+    left: -4px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fefefe;
+    overflow: hidden;
+    background-color: #33a49f;
+    padding: 4px 6px;
+    box-sizing: border-box;
+    top: 100%;
+    width: 220px;
+  }
+
+  &_active {
+    border: solid 4px #33a49f;
+  }
+}
