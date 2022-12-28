@@ -1,5 +1,4 @@
 const { merge } = require('webpack-merge');
-
 const common = require('./webpack.config.js');
 
 module.exports = merge(common, {
@@ -7,11 +6,10 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        enforce: 'pre',
-        loader: 'ts-loader',
-        options: {
-          configFile: 'tsconfig.prod.json',
+        test: /\.(js|ts)x?$/, // add |ts
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
         },
       },
     ],

@@ -22,9 +22,21 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.ts$/,
+      //   enforce: 'pre',
+      //   loader: 'ts-loader',
+      //   options: {
+      //     configFile: 'tsconfig.prod.json',
+      //   },
+      // },
+
       {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
+        test: /\.(js|ts)x?$/, // add |ts
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -49,7 +61,7 @@ module.exports = {
     ],
   },
   plugins: [
-    //new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
